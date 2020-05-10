@@ -24,24 +24,54 @@ public class Quiz1 extends Application implements EventHandler<ActionEvent> {
     Button knappen3;
     Button knappen4;
     Text visare;
-
-
-
+    Text fraga;
+    String fragor = "Vad är bäst";
+    Text svar;
+    String svars = "svar 1, svar 2, svar 3, svar 4";
 
 
 
 
     public static void main(String[] args) {
         launch(args);
-    }
+        String fraga1="Vilken bilmärke är bäst\n" + "(a)volvo/\n(b)BMW\n(c)Audi\n"; // frågor med svars
 
+        String fraga2="Vilken dricka är bäst\n" + "(a)Fanta/\n(b)Sprite\n(c)Cola\n";
+
+        frogorfil[] questions = {
+
+                new frogorfil(fraga1, "a"), // skickar in frågor och svars
+                new frogorfil(fraga2,"c")
+        };
+        Test(questions);
+
+    }
+        public static void Test(frogorfil[] question){
+        int score = 0;
+        for(int i = 0; i < question.length; i++){
+
+            if() //vet inte hur man gör så att en knapp fungerar med if//
+
+
+        }
+
+
+        }
     @Override
     public void start(Stage primaryStage) throws Exception {
-        int i = 2;
+        int i = 0;
         visare = new Text(String.valueOf(i));
         visare.setTranslateY(10);
         visare.setTranslateX(50);
 
+        fraga = new Text(String.valueOf(fragor));
+        fraga.setTranslateY(200);
+        fraga.setTranslateX(200);
+
+
+        svar = new Text(String.valueOf(svars));
+        svar.setTranslateX(500);
+        svar.setTranslateY(200);
 
 
 
@@ -90,7 +120,8 @@ public class Quiz1 extends Application implements EventHandler<ActionEvent> {
         root.getChildren().add(knappen3);
         root.getChildren().add(knappen4);
         root.getChildren().add(visare);
-
+        root.getChildren().add(fraga);
+        root.getChildren().add(svar);
 
 
         Scene scene = new Scene(root, 800, 500);
